@@ -9,7 +9,7 @@ const ProductListing = () => {
 
     const fetchProducts = async () => {
         const response = await axois
-            .get('https://api.escuelajs.co/api/v1/products')
+            .get('https://fakestoreapi.com/products')
             .catch((err) => {
                 console.log('Err', err);
             });

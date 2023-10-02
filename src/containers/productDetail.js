@@ -8,10 +8,10 @@ const ProductDetail = () => {
     const dispatch = useDispatch();
     const { productId } = useParams();
     const product = useSelector((state) => state.product)
-    const {title, description, images, price, category } = product;
+    const {title, description, image, price, category } = product;
     const fetchProduct = async () => {
         const response = await axois
-            .get(`https://api.escuelajs.co/api/v1/products/${productId}`)
+            .get(`https://fakestoreapi.com/products/${productId}`)
             .catch((err) => {
                 console.log('Err', err);
             });
@@ -37,14 +37,14 @@ const ProductDetail = () => {
                             <div className='ui vertical divider'>R</div>
                             <div className='middle aligned row'>
                                 <div className='column rp'>
-                                    <img className='ui fluid image' src={images[0]} />
+                                    <img className='ui fluid image' src={image} />
                                 </div>
                                 <div className='column rp'>
                                     <h1>{title}</h1>
                                     <h2>
                                         <a className='ui teal ag label'>${price}</a>
                                     </h2>
-                                    <h3 className='ui brown block header'>{category.name}</h3>
+                                    <h3 className='ui brown block header'>{category}</h3>
                                     <p>{description}</p>
                                     <div className='ui vertica; animated button' tabIndex='0'>
                                         <div className='hidden content'>
